@@ -17,8 +17,8 @@
       </view>
     </view>
     <!--课表-->
-    <view wx:for="{{wlist}}">
-      <view class="flex-item kcb-item" bindtap="showCardView"  data-statu="open" data-index="{{index}}" style="margin-left:{{(item.xqj-1)*100}}rpx;margin-top:{{(item.sksj-1)*100+5}}rpx;height:{{item.skcd*100-5}}rpx;background-color:{{colorArrays[index%8]}}">
+    <view wx:for="{{userData}}">
+      <view class="flex-item kcb-item" bindtap="detail" data-id="{{item.classId}}" data-statu="open" data-index="{{index}}" style="margin-left:{{(item.xqj-1)*100}}rpx;margin-top:{{(item.sksj-1)*100+5}}rpx;height:{{item.skcd*100-5}}rpx;background-color:{{colorArrays[index%8]}}">
         <view class="smalltext">{{item.kcxx}}</view>
       </view>
     </view>

@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/class/class",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/class/class-detail/class-detail"
   ],
   "window": {
     "backgroundTextStyle": "light",

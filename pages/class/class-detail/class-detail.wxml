@@ -1,0 +1,10 @@
+<view>
+
+  <view class="box">
+    <text class="tit">{{userData.kcmz}}</text>
+  </view>
+  <view class="con">
+    <text class="name" space="nbsp" decode="{{true}}"> 班号 \n \n 学分 \n \n 教室 \n \n 教师 \n \n 时间</text>
+    <text class="detail">  {{userData.kcbh}} \n \n  {{userData.xf}} \n \n {{userData.kcjs}} \n \n {{userData.kcls}} \n \n {{userData.kcsj}}  </text>
+  </view>
+</view>

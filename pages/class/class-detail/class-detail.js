@@ -1,29 +1,29 @@
-const app = getApp()
 Page({
-  detail: function(event) {
-    var classId = event.currentTarget.dataset.id;
-    wx.navigateTo({
-      url: 'class-detail/class-detail?id=' + classId,
-    })
-  },
-  data: {
-    colorArrays: ["#FF69B4", "#FA8072", "#1E90FF", "#BA55D3", "#FFA500", "#778899", "#12AEF3", "#E29AAD", "#85B8CF"],
-    userData: ''
 
+  data: {
+    userData: ''
   },
 
   onLoad: function(options) {
+    wx.showToast({
+      title: '加载中...',
+      mask: true,
+      icon: 'loading',
+      duration: 10000,
+      success: function () {}
+    })
     var that = this;
-    wx.request({
+    var classId = options.id;
+    const wxreq = wx.request({
       url: 'https://www.easy-mock.com/mock/5d497af54b59305fca63eed6/test/aa',
       data: {},
       success: function(res) {
         console.log(res.data);
         that.userData = res.data;
         that.setData({
-          userData: res.data
+          userData: res.data[classId]
         });
-
+        wx.hideToast();
       },
       fail: function (res) {
         console.log(res.data);
@@ -31,5 +31,8 @@ Page({
       }
     })
 
+
   }
+
+
 })
